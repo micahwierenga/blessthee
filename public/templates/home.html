@@ -1,0 +1,56 @@
+	<div class="container">
+
+		<div class="row">
+			<h3>Bless Thee</h3>
+		</div>
+
+		<div class="row">
+			<table id="scoreTable" class="table table-bordered">
+				<thead>
+					<tr>
+						<th class="scoreboard">Rank</th>
+						<th class="scoreboard">Player</th>
+						<th class="scoreboard">Score</th>
+						<!-- <th class="scoreboard">Emotional Status</th> -->
+						<th class="scoreboard"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="player in playersController.allPlayers">
+						<td class="player">{{$index + 1}}</td>
+						<td class="player">{{player.name}}</td>
+						<td class="player">{{player.score}}</td>
+						<!-- <td class="emotion"></td> -->
+						<td>
+							<button class="btn btn-primary" ng-click="playersController.blessPlayer( player )">+</button>
+							<button class="btn btn-danger" ng-click="playersController.cursePlayer( player )">-</button>
+							<!-- <form ng-submit="playersController.blessPlayer( player )">
+								<input class="btn btn-success" type="submit" value="+">		
+							</form>
+							<form ng-submit="playersController.cursePlayer( player )">
+								<input class="btn btn-warning" type="submit" value="-">		
+							</form> -->
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div> <!-- /container -->
+
+
+
+<!-- <div class="players">
+	<div class="row" ng-repeat="player in playersController.allPlayers">
+		<ul>
+			<li>
+				{{player.name}}: {{player.score}}
+				<form ng-submit="playersController.blessPlayer( player )">
+					<input class="btn btn-success" type="submit" value="+">		
+				</form>
+				<form ng-submit="playersController.cursePlayer( player )">
+					<input class="btn btn-warning" type="submit" value="-">		
+				</form>
+			</li>
+		</ul>
+	</div>
+</div> -->
