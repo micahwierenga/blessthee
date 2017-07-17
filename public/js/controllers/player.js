@@ -4,8 +4,10 @@ angular.module( 'blessTheeApp' )
 PlayerIndexController.$inject = ['$http'];
 function PlayerIndexController( $http ) {
 	var vm = this;
+	vm.savePlayer = savePlayer;
 	vm.blessPlayer = blessPlayer;
 	vm.cursePlayer = cursePlayer;
+	vm.deletePlayer = deletePlayer;
 
 	function getAllPlayers() {
 		$http.get( '/api/players' )
@@ -15,6 +17,16 @@ function PlayerIndexController( $http ) {
 	}
 
 	getAllPlayers();
+
+	function savePlayer() {
+		console.log( 'hitting savePlayer' );
+		console.log( vm.newPlayer );
+		$http.post( '/api/players/', vm.newPlayer )
+			 .then( function( response ) {
+			 	var player = response.data;
+			 	getAllPlayers();
+			 })
+	}
 
 	function blessPlayer( player ) {
 		var blessedPlayer = {
@@ -38,5 +50,13 @@ function PlayerIndexController( $http ) {
 			 	var player = response.data;
 			 	getAllPlayers();
 			 })
+	}
+
+	function deletePlayer( player ) {
+		$http.delete( '/api/players/' + player.id )
+			 .then(function( response ) {
+				var playerIndex = vm.allPlayers.indexOf( player );
+				vm.allPlayers.splice( playerIndex, 1 );
+			});
 	}
 }

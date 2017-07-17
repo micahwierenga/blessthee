@@ -4,8 +4,12 @@ var playersController = require( '../controllers/players.js' );
 
 router.get( '/api/players', playersController.index );
 
-router.get( '/api/players/:id', playersController.show );
+router.post( '/api/players', playersController.create );
 
-router.put( '/api/players/:id', playersController.bless );
+// router.get( '/api/players/:id', playersController.show );
+
+router.put( '/api/players/:id', playersController.score );
+
+router.delete( '/api/players/:id', playersController.destroy );
 
 module.exports = router;

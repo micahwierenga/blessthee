@@ -23,15 +23,6 @@ var playerList = [
 	}
 ];
 
-// db.Player.remove( {}, function( err, players ) {
-// 	db.Player.create( playerList, function( err, players ) {
-// 		if( err ) { return console.log( 'ERROR: ', err ); }
-// 		console.log( 'ALL PLAYERS: ', players );
-// 		console.log( 'CREATED: ', players.length, 'players' );
-// 		process.exit();
-// 	});
-// });
-
 var playerCreate = function() {
 	return db.Player.bulkCreate( playerList );
 }

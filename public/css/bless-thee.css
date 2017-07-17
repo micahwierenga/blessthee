@@ -24,11 +24,17 @@ table, th, td {
 .player {
 	font-size: 60px;
 }
-.btn {
+.table-button {
 	margin-right: 10px;
 	margin-top: 20px;
 	font-size: 24px;
     width: 50px;
+}
+.delete-button {
+    display: none;
+}
+.delete-button:hover {
+    display: block;
 }
 .emotional_status {
 	width: 50px;

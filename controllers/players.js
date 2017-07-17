@@ -7,19 +7,22 @@ function index( req, res ) {
 	});
 }
 
-function show( req, res ) {
-	console.log( req.params.id );
-	Player.findById( req.params.id )
-		.then( function( player ) {
-			if( !player ) return error( res, 'not found by show' )
-			res.json( player );
-		})
+function create( req, res ) {
+	console.log( req.body );
+	Player.create( req.body )
+	.then( function( player ) {
+		if( !player ) return error( res, 'not saved by create function')
+		res.json( player );
+	})
+	.catch( function( err ) {
+		console.log( err, req.body );
+	})
 }
 
-function bless( req, res ) {
+function score( req, res ) {
 	Player.findById( req.params.id )
 	.then( function( player ) {
-		if( !player ) return error( res, 'not found by bless' );
+		if( !player ) return error( res, 'not found by score function' );
 		return player.updateAttributes( req.body );
 	})
 	.then( function( player ) {
@@ -27,6 +30,18 @@ function bless( req, res ) {
 	});
 }
 
+function destroy( req, res ) {
+  Player.findById( req.params.id )
+  .then( function( player ){
+    if( !player ) return error( res, 'not found by destroy function');
+    return player.destroy();
+  })
+  .then( function(){
+    res.redirect( '/' );
+  });  
+}
+
 module.exports.index = index;
-module.exports.show = show;
-module.exports.bless = bless;
+module.exports.create = create;
+module.exports.score = score;
+module.exports.destroy = destroy;
