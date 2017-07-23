@@ -1,6 +1,6 @@
 body {
-	background-color: #333;
-	color: #ccc;
+	/*background-color: #333;
+	color: #ccc;*/
 }
 h3 {
 	text-align: center;
@@ -11,12 +11,12 @@ table {
 	text-align: center;
 	vertical-align: middle;
     border-collapse: collapse;
-    background-color: #ccc;
-    color: #333;
+    /*background-color: #ccc;
+    color: #333;*/
 }
-table, th, td {
+/*table, th, td {
     border: 3px solid #333 !important;
-}
+}*/
 .scoreboard {
 	text-align: center;
 	font-size: 24px;

@@ -33,6 +33,10 @@
 		    Add New Player
 		</button>
 	</div>
+	<div ng-repeat="scheme in playersController.allSchemes">
+				<input type="radio" name="scheme" ng-model="scheme.name" ng-value="{{scheme}}" ng-change="playersController.changeSchemes( scheme )">
+				{{scheme.name}}
+	</div>
 </div> <!-- /container -->
 
 	<!-- Modal -->

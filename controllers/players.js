@@ -7,8 +7,15 @@ function index( req, res ) {
 	});
 }
 
+function show( req, res ) {
+	Player.findById( req.params.id )
+	.then( function( player ) {
+		if( !player ) return error( res, 'not found by show function' )
+		res.json( player );
+	})
+}
+
 function create( req, res ) {
-	console.log( req.body );
 	Player.create( req.body )
 	.then( function( player ) {
 		if( !player ) return error( res, 'not saved by create function')
@@ -42,6 +49,7 @@ function destroy( req, res ) {
 }
 
 module.exports.index = index;
+module.exports.show = show;
 module.exports.create = create;
 module.exports.score = score;
 module.exports.destroy = destroy;
