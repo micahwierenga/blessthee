@@ -36,6 +36,36 @@ table {
 .delete-button:hover {
     display: block;
 }
+.modal {
+	color: #000;
+}
+.radioList {
+	list-style: none;
+}
+input[type="radio"] {
+	display: none;
+}
+label input[type="radio"] + span {
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	margin: -1px 4px 0 0;
+	vertical-align: middle;
+	cursor: pointer;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	background-color: #000;
+}
+label input[type="radio"]:checked + span {
+	background-color: #AAA;
+}
+label input[type="radio"] + span,
+label input[type="radio"]:checked + span {
+  -webkit-transition:background-color 0.4s linear;
+  -o-transition:background-color 0.4s linear;
+  -moz-transition:background-color 0.4s linear;
+  transition:background-color 0.4s linear;
+}
 .emotional_status {
 	width: 50px;
 	height: 50px;

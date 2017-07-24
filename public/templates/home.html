@@ -32,14 +32,16 @@
 		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newPlayerModal">
 		    Add New Player
 		</button>
-	</div>
-	<div ng-repeat="scheme in playersController.allSchemes">
-				<input type="radio" name="scheme" ng-model="scheme.name" ng-value="{{scheme}}" ng-change="playersController.changeSchemes( scheme )">
-				{{scheme.name}}
+		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#changeSchemesModal">
+		    Change Color Scheme
+		</button>
+		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addSchemesModal">
+		    Add Color Scheme
+		</button>
 	</div>
 </div> <!-- /container -->
 
-	<!-- Modal -->
+<!-- New Player Modal -->
 <div class="modal fade" id="newPlayerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -71,8 +73,88 @@
 	</div>
 </div>
 
+<!-- Change Color Scheme Modal -->
+<div class="modal fade" id="changeSchemesModal" tabindex="-1" role="dialog" aria-labelledby="changeSchemesModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<!-- Modal Header -->
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h4 class="modal-title" id="changeSchemesModalLabel">Change Color Schemes</h4>
+			</div>
+
+			<!-- Modal Body -->
+			<div class="modal-body">
+				<div class="row" >
+					<ul class="radioList">
+						<li ng-repeat="scheme in playersController.allSchemes">
+							<label class="" >
+								<input class="change-schemes-button" type="radio" ng-model="model" ng-value="scheme" ng-init="scheme.id==playersController.radioId?(model=scheme):''" ng-change="playersController.changeSchemes( scheme )">
+								<span class="radioSpan"></span>
+								{{scheme.name}}
+							</label>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Add Color Scheme Modal -->
+<div class="modal fade" id="addSchemesModal" tabindex="-1" role="dialog" aria-labelledby="newSchemeModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<!-- Modal Header -->
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h4 class="modal-title" id="newSchemeModalLabel">New Color Scheme</h4>
+			</div>
+
+			<!-- Modal Body -->
+			<div class="modal-body">
+				<form role="form" id="add-color-scheme" ng-submit="playersController.saveScheme()">
+					<div class="form-group">
+						<label>Name</label>
+						<input type="text" class="form-control" ng-model="playersController.newColorScheme.name" placeholder="Enter color scheme name"/>
+					</div>
+					<div class="form-group">
+						<label>Body Background</label>
+						<input type="text" class="form-control" ng-model="playersController.newColorScheme.body_background" placeholder="Enter body background color"/>
+					</div>
+					<div class="form-group">
+						<label>Body Text</label>
+						<input type="text" class="form-control" ng-model="playersController.newColorScheme.body_text" placeholder="Enter body text color"/>
+					</div>
+					<div class="form-group">
+						<label>Table Background</label>
+						<input type="text" class="form-control" ng-model="playersController.newColorScheme.table_background" placeholder="Enter table background color"/>
+					</div>
+					<div class="form-group">
+						<label>Table Text</label>
+						<input type="text" class="form-control" ng-model="playersController.newColorScheme.table_text" placeholder="Enter table text color"/>
+					</div>
+					<button type="submit" class="btn btn-default">Add Color Scheme</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
 <script>
 	$('#add-player-form').submit( function() {
 		$('#newPlayerModal').modal( 'hide' );
+	})
+	$('#change-schemes-button').click( function() {
+		$('#changeSchemesModal').modal( 'hide' );
+	})
+	$('#add-color-scheme').submit( function() {
+		$('#addSchemesModal').modal( 'hide' );
 	})
 </script>

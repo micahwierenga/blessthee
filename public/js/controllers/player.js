@@ -9,6 +9,7 @@ function PlayerIndexController( $http ) {
 	vm.blessPlayer = blessPlayer;
 	vm.cursePlayer = cursePlayer;
 	vm.deletePlayer = deletePlayer;
+	vm.saveScheme = saveScheme;
 	vm.changeSchemes = changeSchemes;
 
 	function getAllPlayers() {
@@ -73,10 +74,10 @@ function PlayerIndexController( $http ) {
 			 .then( function( response ) {
 			 	vm.allSchemes = response.data;
 			 	var schemes = vm.allSchemes;
-			 	console.log( schemes );
 			 	for( var i = 0; i < schemes.length; i++ ) {
 			 		if( schemes[i].active == 1 ) {
 			 			vm.defaultScheme = schemes[i];
+			 			vm.radioId = schemes[i].id;
 			 			$('body').css({
 					 		'background-color': schemes[i].body_background,
 					 		'color': schemes[i].body_text
@@ -86,20 +87,34 @@ function PlayerIndexController( $http ) {
 					 		'color': schemes[i].table_text
 					 	});
 					 	$('table.table-bordered').css({
-					 		'border': '3px solid ' + schemes[i].table_border
+					 		'border': '3px solid ' + schemes[i].body_background
 					 	});
 					 	$('table.table-bordered > thead > tr > th').css({
-					 		'border': '3px solid ' + schemes[i].table_border
+					 		'border': '3px solid ' + schemes[i].body_background
 					 	});
 					 	$('table.table-bordered > tbody > tr > td').css({
-					 		'border': '3px solid ' + schemes[i].table_border
+					 		'border': '3px solid ' + schemes[i].body_background
 					 	});
+					 	// $('label input[type="radio"] + span').css({
+					 	// 	'background-color': schemes[i].table_background
+					 	// })
+					 	// $('label input[type="radio"]:checked + span').css({
+					 	// 	'background-color': schemes[i].body_text
+					 	// })
 			 		}
 			 	}
 			 })
 	}
 
 	getAllSchemes();
+
+	function saveScheme() {
+		$http.post( '/api/schemes/', vm.newColorScheme )
+			 .then( function( response ) {
+			 	var scheme = response.data;
+			 	getAllSchemes();
+			 })
+	}
 
 	function updateDefaultScheme() {
 		var defaultScheme = vm.defaultScheme;
@@ -113,7 +128,6 @@ function PlayerIndexController( $http ) {
 	}
 
 	function changeSchemes( scheme ) {
-		console.log( scheme );
 		updateDefaultScheme();
 		var changedScheme = {
 			active: 1

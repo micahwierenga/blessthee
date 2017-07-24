@@ -2,20 +2,20 @@ var db = require("../models").models;
 
 var playerList = [
 	{
-		name: 'Jason',
-		score: 121
+		name: 'Jargo',
+		score: 131
 	},
 	{
 		name: 'Steve',
-		score: 116
+		score: 122
 	},
 	{
 		name: 'Larry',
-		score: 141
+		score: 151
 	},
 	{
 		name: 'Micah',
-		score: 131
+		score: 142
 	}
 ];
 
@@ -36,6 +36,33 @@ var schemeList = [
 		table_background: '#565656',
 		table_text: '#D7CEC7',
 		table_border: '#D7CEC7',
+		active: 0
+	},
+	{
+		name: 'Earth',
+		body_background: '#659DBD',
+		body_text: '#FFFFFF',
+		table_background: '#FBEEC1',
+		table_text: '#659DBD',
+		table_border: '#659DBD',
+		active: 0
+	},
+	{
+		name: 'Forest',
+		body_background: '#5CDB95',
+		body_text: '#EDF5E1',
+		table_background: '#05386B',
+		table_text: '#5CDB95',
+		table_border: '#5CDB95',
+		active: 0
+	},
+	{
+		name: 'Lime Green on Black',
+		body_background: '#000000',
+		body_text: '#8EE4AF',
+		table_background: '#5CDB95',
+		table_text: '#000000',
+		table_border: '#000000',
 		active: 0
 	}
 ];
