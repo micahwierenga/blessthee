@@ -99,11 +99,12 @@
 							<i class="glyphicon glyphicon-remove" ng-click="playersController.deleteScheme( scheme )"></i>
 						</li>
 					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+					<button type="submit" id="change-scheme-close" class="btn btn-default">Close</button>
+				</div><!-- row -->
+			</div><!-- modal-body -->
+		</div><!-- modal content -->
+	</div><!-- modal dialog -->
+</div><!-- modal fade -->
 
 <!-- Add Color Scheme Modal -->
 <div class="modal fade" id="addSchemesModal" tabindex="-1" role="dialog" aria-labelledby="newSchemeModalLabel" aria-hidden="true">
@@ -152,7 +153,7 @@
 	$('#add-player-form').submit( function() {
 		$('#newPlayerModal').modal( 'hide' );
 	})
-	$('#change-schemes-button').click( function() {
+	$('#change-scheme-close').click( function() {
 		$('#changeSchemesModal').modal( 'hide' );
 	})
 	$('#add-color-scheme').submit( function() {
