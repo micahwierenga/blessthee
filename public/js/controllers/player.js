@@ -36,6 +36,8 @@ function PlayerIndexController( $http ) {
 			 .then( function( response ) {
 			 	var player = response.data;
 			 	getAllPlayers();
+			 	$('#player-name-input').val('');
+			 	$('#player-score-input').val('');
 			 })
 	}
 
@@ -117,6 +119,11 @@ function PlayerIndexController( $http ) {
 			 .then( function( response ) {
 			 	var scheme = response.data;
 			 	getAllSchemes();
+			 	$('#scheme-name-input').val('');
+			 	$('#body-background-input').val('');
+			 	$('#body-text-input').val('');
+			 	$('#table-background-input').val('');
+			 	$('#table-text-input').val('');
 			 })
 	}
 

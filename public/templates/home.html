@@ -60,11 +60,11 @@
 				<form role="form" id="add-player-form" ng-submit="playersController.savePlayer()">
 					<div class="form-group">
 						<label for="exampleInputEmail1">Name</label>
-						<input type="name" class="form-control" ng-model="playersController.newPlayer.name" placeholder="Enter name"/>
+						<input type="name" id="player-name-input" class="form-control" ng-model="playersController.newPlayer.name" placeholder="Enter name"/>
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">Score</label>
-						<input type="score" class="form-control" ng-model="playersController.newPlayer.score" placeholder="Score"/>
+						<input type="score" id="player-score-input" class="form-control" ng-model="playersController.newPlayer.score" placeholder="Score"/>
 					</div>
 					<button type="submit" class="btn btn-default">Add Player</button>
 				</form>
@@ -123,23 +123,23 @@
 				<form role="form" id="add-color-scheme" ng-submit="playersController.saveScheme()">
 					<div class="form-group">
 						<label>Name</label>
-						<input type="text" class="form-control" ng-model="playersController.newColorScheme.name" placeholder="Enter color scheme name"/>
+						<input type="text" id="scheme-name-input" class="form-control" ng-model="playersController.newColorScheme.name" placeholder="Enter color scheme name"/>
 					</div>
 					<div class="form-group">
 						<label>Body Background</label>
-						<input type="text" class="form-control" ng-model="playersController.newColorScheme.body_background" placeholder="Enter body background color"/>
+						<input type="text" id="body-background-input" class="form-control" ng-model="playersController.newColorScheme.body_background" placeholder="Enter body background color"/>
 					</div>
 					<div class="form-group">
 						<label>Body Text</label>
-						<input type="text" class="form-control" ng-model="playersController.newColorScheme.body_text" placeholder="Enter body text color"/>
+						<input type="text" id="body-text-input" class="form-control" ng-model="playersController.newColorScheme.body_text" placeholder="Enter body text color"/>
 					</div>
 					<div class="form-group">
 						<label>Table Background</label>
-						<input type="text" class="form-control" ng-model="playersController.newColorScheme.table_background" placeholder="Enter table background color"/>
+						<input type="text" id="table-background-input" class="form-control" ng-model="playersController.newColorScheme.table_background" placeholder="Enter table background color"/>
 					</div>
 					<div class="form-group">
 						<label>Table Text</label>
-						<input type="text" class="form-control" ng-model="playersController.newColorScheme.table_text" placeholder="Enter table text color"/>
+						<input type="text" id="table-text-input" class="form-control" ng-model="playersController.newColorScheme.table_text" placeholder="Enter table text color"/>
 					</div>
 					<button type="submit" class="btn btn-default">Add Color Scheme</button>
 				</form>
