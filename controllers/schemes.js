@@ -2,7 +2,7 @@ var db = require( '../models' );
 var Scheme = db.models.Scheme;
 
 function index( req, res ) {
-	Scheme.findAll().then( function( schemes ) {
+	Scheme.findAll( {order: '"id"'} ).then( function( schemes ) {
 		res.json( schemes );
 	});
 }
