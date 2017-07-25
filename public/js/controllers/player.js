@@ -11,11 +11,13 @@ function PlayerIndexController( $http ) {
 	vm.deletePlayer = deletePlayer;
 	vm.saveScheme = saveScheme;
 	vm.changeSchemes = changeSchemes;
+	vm.deleteScheme = deleteScheme;
 
 	function getAllPlayers() {
 		$http.get( '/api/players' )
 			 .then( function ( response ) {
 			 	vm.allPlayers = response.data;
+			 	getAllSchemes();
 			 });
 	}
 
@@ -46,6 +48,7 @@ function PlayerIndexController( $http ) {
 			 .then( function( response ) {
 			 	var player = response.data;
 			 	getAllPlayers();
+			 	getAllSchemes();
 			 })
 	}
 
@@ -58,6 +61,7 @@ function PlayerIndexController( $http ) {
 			 .then( function( response ) {
 			 	var player = response.data;
 			 	getAllPlayers();
+			 	getAllSchemes();
 			 })
 	}
 
@@ -137,5 +141,17 @@ function PlayerIndexController( $http ) {
 			 .then( function( response ) {
 			 	getAllSchemes();
 			 })
+	}
+
+	function deleteScheme( scheme ) {
+		if( scheme.id == vm.defaultScheme.id ) {
+			console.log( 'Cannot delete active scheme' );
+			return 'Cannot delete active scheme';
+		}
+		$http.delete( '/api/schemes/' + scheme.id )
+			 .then(function( response ) {
+				var schemeIndex = vm.allSchemes.indexOf( scheme );
+				vm.allSchemes.splice( schemeIndex, 1 );
+			});
 	}
 }
