@@ -42,6 +42,7 @@ function PlayerIndexController( $http ) {
 	}
 
 	function blessPlayer( player ) {
+		var halloweenTheme = new Audio( '../../media/halloween_theme.mp3' );
 		var blessedPlayer = {
 			score: player.score + 1
 		}
@@ -49,6 +50,11 @@ function PlayerIndexController( $http ) {
 		$http.put( '/api/players/' + id, blessedPlayer )
 			 .then( function( response ) {
 			 	var player = response.data;
+			 	for( var i = 0; i < vm.allPlayers.length; i++ ) {
+			 		if( vm.allPlayers[i].id == player.id && ( vm.allPlayers[i - 1].score - player.score <= 5 && vm.allPlayers[i - 1].score - player.score >= 0 ) ) {
+			 			halloweenTheme.play();
+			 		}
+			 	}
 			 	getAllPlayers();
 			 	getAllSchemes();
 			 })
@@ -101,6 +107,10 @@ function PlayerIndexController( $http ) {
 					 	$('table.table-bordered > tbody > tr > td').css({
 					 		'border': '3px solid ' + schemes[i].body_background
 					 	});
+					 	// $('.btn-success').css({
+					 	// 	'background-color': schemes[i].table_background,
+					 	// 	'color': schemes[i].table_text
+					 	// });
 					 	// $('label input[type="radio"] + span').css({
 					 	// 	'background-color': schemes[i].table_background
 					 	// })
