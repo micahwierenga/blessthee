@@ -51,7 +51,7 @@ function PlayerIndexController( $http ) {
 			 .then( function( response ) {
 			 	var player = response.data;
 			 	for( var i = 0; i < vm.allPlayers.length; i++ ) {
-			 		if( vm.allPlayers[i].id == player.id && ( vm.allPlayers[i - 1].score - player.score <= 5 && vm.allPlayers[i - 1].score - player.score >= 0 ) ) {
+			 		if( !vm.allPlayers[0] && vm.allPlayers[i].id == player.id && ( vm.allPlayers[i - 1].score - player.score <= 5 && vm.allPlayers[i - 1].score - player.score >= 0 ) ) {
 			 			halloweenTheme.play();
 			 		}
 			 	}
