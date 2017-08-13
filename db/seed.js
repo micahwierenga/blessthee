@@ -3,19 +3,19 @@ var db = require("../models").models;
 var playerList = [
 	{
 		name: 'Jargo',
-		score: 131
+		score: 164
 	},
 	{
 		name: 'Steve',
-		score: 122
+		score: 166
 	},
 	{
 		name: 'Larry',
-		score: 151
+		score: 193
 	},
 	{
 		name: 'Micah',
-		score: 142
+		score: 177
 	}
 ];
 
@@ -27,6 +27,18 @@ var schemeList = [
 		table_background: '#CCCCCC',
 		table_text: '#333333',
 		table_border: '#333333',
+		add_button_background: '#5cb85c',
+		add_button_text: '#FFFFFF',
+		minus_button_background: '#337ab7',
+		minus_button_text: '#FFFFFF',
+		generic_button_background: '#337ab7',
+		generic_button_text: '#FFFFFF',
+		add_player_button_background: '#337ab7',
+		add_player_button_text: '#FFFFFF',
+		add_scheme_button_background: '#337ab7',
+		add_scheme_button_text: '#FFFFFF',
+		change_scheme_button_background: '#337ab7',
+		change_scheme_button_text: '#FFFFFF',
 		active: 1
 	},
 	{
@@ -36,6 +48,18 @@ var schemeList = [
 		table_background: '#565656',
 		table_text: '#D7CEC7',
 		table_border: '#D7CEC7',
+		add_button_background: '#D7CEC7',
+		add_button_text: '#76323F',
+		minus_button_background: '#D7CEC7',
+		minus_button_text: '#76323F',
+		generic_button_background: '#76323F',
+		generic_button_text: '#D7CEC7',
+		add_player_button_background: '#76323F',
+		add_player_button_text: '#D7CEC7',
+		add_scheme_button_background: '#76323F',
+		add_scheme_button_text: '#D7CEC7',
+		change_scheme_button_background: '#76323F',
+		change_scheme_button_text: '#D7CEC7',
 		active: 0
 	},
 	{
@@ -45,6 +69,18 @@ var schemeList = [
 		table_background: '#FBEEC1',
 		table_text: '#659DBD',
 		table_border: '#659DBD',
+		add_button_background: '#659DBD',
+		add_button_text: '#FBEEC1',
+		minus_button_background: '#659DBD',
+		minus_button_text: '#FBEEC1',
+		generic_button_background: '',
+		generic_button_text: '#659DBD',
+		add_player_button_background: '#FFFFFF',
+		add_player_button_text: '#659DBD',
+		add_scheme_button_background: '#FFFFFF',
+		add_scheme_button_text: '#659DBD',
+		change_scheme_button_background: '#FFFFFF',
+		change_scheme_button_text: '#659DBD',
 		active: 0
 	},
 	{
@@ -54,6 +90,18 @@ var schemeList = [
 		table_background: '#05386B',
 		table_text: '#5CDB95',
 		table_border: '#5CDB95',
+		add_button_background: '#5CDB95',
+		add_button_text: '#05386B',
+		minus_button_background: '#5CDB95',
+		minus_button_text: '#05386B',
+		generic_button_background: '#EDF5E1',
+		generic_button_text: '#05386B',
+		add_player_button_background: '#EDF5E1',
+		add_player_button_text: '#05386B',
+		add_scheme_button_background: '#EDF5E1',
+		add_scheme_button_text: '#05386B',
+		change_scheme_button_background: '#EDF5E1',
+		change_scheme_button_text: '#05386B',
 		active: 0
 	},
 	{
@@ -63,6 +111,18 @@ var schemeList = [
 		table_background: '#5CDB95',
 		table_text: '#000000',
 		table_border: '#000000',
+		add_button_background: '#000000',
+		add_button_text: '#5CDB95',
+		minus_button_background: '#000000',
+		minus_button_text: '#5CDB95',
+		generic_button_background: '#5CDB95',
+		generic_button_text: '#000000',
+		add_player_button_background: '#5CDB95',
+		add_player_button_text: '#000000',
+		add_scheme_button_background: '#5CDB95',
+		add_scheme_button_text: '#000000',
+		change_scheme_button_background: '#5CDB95',
+		change_scheme_button_text: '#000000',
 		active: 0
 	}
 ];

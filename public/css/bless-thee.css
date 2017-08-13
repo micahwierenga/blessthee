@@ -1,22 +1,15 @@
-body {
-	/*background-color: #333;
-	color: #ccc;*/
-}
 h3 {
 	text-align: center;
 	font-size: 60px;
 	margin-bottom: 24px;
 }
+
+/*Table*/
 table {
 	text-align: center;
 	vertical-align: middle;
     border-collapse: collapse;
-    /*background-color: #ccc;
-    color: #333;*/
 }
-/*table, th, td {
-    border: 3px solid #333 !important;
-}*/
 .scoreboard {
 	text-align: center;
 	font-size: 24px;
@@ -24,18 +17,84 @@ table {
 .player {
 	font-size: 60px;
 }
+
+/*Buttons*/
 .table-button {
 	margin-right: 10px;
 	margin-top: 20px;
 	font-size: 24px;
     width: 50px;
 }
-.delete-button {
+.hide-button {
     display: none;
 }
-.delete-button:hover {
+.hide-button:hover {
     display: block;
 }
+.glyphicon-remove {
+	pointer-events: all;
+}
+.button {
+	-webkit-border-radius: 5;
+	-moz-border-radius: 5;
+	border-radius: 5px;
+	font-family: Arial;
+	text-decoration: none;
+	border-style: none;
+	text-align: center;
+	font-size: 32px;
+	font-weight: 800;
+	margin-right: 10px;
+	margin-top: 20px;
+	font-size: 24px;
+	width: 50px;
+	height: 50px;
+}
+.button:hover {
+  text-decoration: none;
+}
+.button-delete {
+	background: #d9534f;
+	background-image: -webkit-linear-gradient(top, #d9534f, #d43f3a);
+	background-image: -moz-linear-gradient(top, #d9534f, #d43f3a);
+	background-image: -ms-linear-gradient(top, #d9534f, #d43f3a);
+	background-image: -o-linear-gradient(top, #d9534f, #d43f3a);
+	background-image: linear-gradient(to bottom, #d9534f, #d43f3a);
+}
+.button-delete:hover {
+	background: #d43f3a;
+	background-image: -webkit-linear-gradient(top, #d43f3a, #d9534f);
+	background-image: -moz-linear-gradient(top, #d43f3a, #d9534f);
+	background-image: -ms-linear-gradient(top, #d43f3a, #d9534f);
+	background-image: -o-linear-gradient(top, #d43f3a, #d9534f);
+	background-image: linear-gradient(to bottom, #d43f3a, #d9534f);
+}
+.button-medium {
+	-webkit-border-radius: 5;
+	-moz-border-radius: 5;
+	border-radius: 5px;
+	font-family: Arial;
+	text-decoration: none;
+	border-style: none;
+	text-align: center;
+	font-size: 32px;
+	font-weight: 400;
+	margin-right: 10px;
+	margin-top: 20px;
+	font-size: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	white-space: nowrap;
+	height: 50px;
+}
+.button-medium:hover {
+  text-decoration: none;
+}
+.button-row {
+	text-align: center;
+}
+
+/*Modal*/
 .modal {
 	color: #000;
 }
@@ -66,9 +125,6 @@ label input[type="radio"]:checked + span {
   -moz-transition:background-color 0.4s linear;
   transition:background-color 0.4s linear;
 }
-.glyphicon-remove {
-	pointer-events: all;
-}
 #change-scheme-close {
 	text-align: center;
 	margin: 10px 45%;
@@ -78,6 +134,8 @@ label input[type="radio"]:checked + span {
 	height: 50px;
 	margin-top: 15px;
 }
+
+/*Footer*/
 .copyright {
 	text-align: center;
 	font-size: 14px;

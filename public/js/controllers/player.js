@@ -51,7 +51,7 @@ function PlayerIndexController( $http ) {
 			 .then( function( response ) {
 			 	var player = response.data;
 			 	for( var i = 0; i < vm.allPlayers.length; i++ ) {
-			 		if( !vm.allPlayers[0] && vm.allPlayers[i].id == player.id && ( vm.allPlayers[i - 1].score - player.score <= 5 && vm.allPlayers[i - 1].score - player.score >= 0 ) ) {
+			 		if( player.id != vm.allPlayers[0].id && vm.allPlayers[i].id == player.id && ( vm.allPlayers[i - 1].score - player.score <= 5 && vm.allPlayers[i - 1].score - player.score >= 0 ) ) {
 			 			halloweenTheme.play();
 			 		}
 			 	}
@@ -86,6 +86,7 @@ function PlayerIndexController( $http ) {
 			 .then( function( response ) {
 			 	vm.allSchemes = response.data;
 			 	var schemes = vm.allSchemes;
+			 	console.log( schemes );
 			 	for( var i = 0; i < schemes.length; i++ ) {
 			 		if( schemes[i].active == 1 ) {
 			 			vm.defaultScheme = schemes[i];
@@ -107,16 +108,26 @@ function PlayerIndexController( $http ) {
 					 	$('table.table-bordered > tbody > tr > td').css({
 					 		'border': '3px solid ' + schemes[i].body_background
 					 	});
-					 	// $('.btn-success').css({
-					 	// 	'background-color': schemes[i].table_background,
-					 	// 	'color': schemes[i].table_text
-					 	// });
-					 	// $('label input[type="radio"] + span').css({
-					 	// 	'background-color': schemes[i].table_background
-					 	// })
-					 	// $('label input[type="radio"]:checked + span').css({
-					 	// 	'background-color': schemes[i].body_text
-					 	// })
+					 	$('.button-add').css({
+					 		'background': schemes[i].add_button_background,
+					 		'color': schemes[i].add_button_text
+					 	});
+					 	$('.button-minus').css({
+					 		'background': schemes[i].minus_button_background,
+					 		'color': schemes[i].minus_button_text
+					 	});
+					 	$('.add-player-button').css({
+					 		'background': schemes[i].add_player_button_background,
+					 		'color': schemes[i].add_player_button_text
+					 	});
+					 	$('.add-scheme-button').css({
+					 		'background': schemes[i].add_scheme_button_background,
+					 		'color': schemes[i].add_scheme_button_text
+					 	});
+					 	$('.change-scheme-button').css({
+					 		'background': schemes[i].change_scheme_button_background,
+					 		'color': schemes[i].change_scheme_button_text
+					 	});
 			 		}
 			 	}
 			 })

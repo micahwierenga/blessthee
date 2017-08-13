@@ -22,21 +22,26 @@
 					<td class="player">{{player.score}}</td>
 					<!-- <td class="emotion"></td> -->
 					<td>
-						<button class="btn btn-success table-button" ng-click="playersController.blessPlayer( player )"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
-						<button class="btn btn-primary table-button" ng-click="playersController.cursePlayer( player )"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
-						<button class="btn btn-danger table-button delete-button" ng-click="playersController.deletePlayer( player )"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+						<!-- <button class="btn btn-success table-button" ng-click="playersController.blessPlayer( player )"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button> -->
+						<button class="button button-add" ng-click="playersController.blessPlayer( player )">&plus;</button>
+						<!-- <button class="btn btn-primary table-button" ng-click="playersController.cursePlayer( player )"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button> -->
+						<button class="button button-minus" ng-click="playersController.cursePlayer( player )">&minus;</button>
+						<!-- <button class="btn btn-danger table-button delete-button" ng-click="playersController.deletePlayer( player )"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button> -->
+						<button class="button button-delete hide-button" ng-click="playersController.deletePlayer( player )">&#120;</button>
 					</td>
 				</tr>
 			</tbody>
 		</table>
-		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newPlayerModal">
+	</div>
+	<div class="row button-row">
+		<button class="button-medium add-player-button" data-toggle="modal" data-target="#newPlayerModal">
 		    Add New Player
 		</button>
-		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#changeSchemesModal">
-		    Change Color Scheme
-		</button>
-		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addSchemesModal">
+		<button class="button-medium add-scheme-button" data-toggle="modal" data-target="#addSchemesModal">
 		    Add Color Scheme
+		</button>
+		<button class="button-medium change-scheme-button" data-toggle="modal" data-target="#changeSchemesModal">
+		    Change Color Scheme
 		</button>
 	</div>
 </div> <!-- /container -->
@@ -141,6 +146,30 @@
 					<div class="form-group">
 						<label>Table Text</label>
 						<input type="text" id="table-text-input" class="form-control" ng-model="playersController.newColorScheme.table_text" placeholder="Enter table text color"/>
+					</div>
+					<div class="form-group">
+						<label>Add Button Background</label>
+						<input type="text" id="table-text-input" class="form-control" ng-model="playersController.newColorScheme.add_button_background" placeholder="Enter add button background color"/>
+					</div>
+					<div class="form-group">
+						<label>Add Button Text</label>
+						<input type="text" id="table-text-input" class="form-control" ng-model="playersController.newColorScheme.add_button_text" placeholder="Enter add button text color"/>
+					</div>
+					<div class="form-group">
+						<label>Minus Button Background</label>
+						<input type="text" id="table-text-input" class="form-control" ng-model="playersController.newColorScheme.minus_button_background" placeholder="Enter minus button background color"/>
+					</div>
+					<div class="form-group">
+						<label>Minus Button Text</label>
+						<input type="text" id="table-text-input" class="form-control" ng-model="playersController.newColorScheme.minus_button_text" placeholder="Enter minus button text color"/>
+					</div>
+					<div class="form-group">
+						<label>Generic Button Background</label>
+						<input type="text" id="table-text-input" class="form-control" ng-model="playersController.newColorScheme.minus_button_background" placeholder="Enter generic button background color"/>
+					</div>
+					<div class="form-group">
+						<label>Generic Button Text</label>
+						<input type="text" id="table-text-input" class="form-control" ng-model="playersController.newColorScheme.generic_button_text" placeholder="Enter generic button text color"/>
 					</div>
 					<button type="submit" class="btn btn-default">Add Color Scheme</button>
 				</form>
