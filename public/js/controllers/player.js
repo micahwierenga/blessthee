@@ -86,7 +86,6 @@ function PlayerIndexController( $http ) {
 			 .then( function( response ) {
 			 	vm.allSchemes = response.data;
 			 	var schemes = vm.allSchemes;
-			 	console.log( schemes );
 			 	for( var i = 0; i < schemes.length; i++ ) {
 			 		if( schemes[i].active == 1 ) {
 			 			vm.defaultScheme = schemes[i];
@@ -116,18 +115,22 @@ function PlayerIndexController( $http ) {
 					 		'background': schemes[i].minus_button_background,
 					 		'color': schemes[i].minus_button_text
 					 	});
-					 	$('.add-player-button').css({
-					 		'background': schemes[i].add_player_button_background,
-					 		'color': schemes[i].add_player_button_text
+					 	$('.button-medium').css({
+					 		'background': schemes[i].generic_button_background,
+					 		'color': schemes[i].generic_button_text
 					 	});
-					 	$('.add-scheme-button').css({
-					 		'background': schemes[i].add_scheme_button_background,
-					 		'color': schemes[i].add_scheme_button_text
-					 	});
-					 	$('.change-scheme-button').css({
-					 		'background': schemes[i].change_scheme_button_background,
-					 		'color': schemes[i].change_scheme_button_text
-					 	});
+					 	// $('.add-player-button').css({
+					 	// 	'background': schemes[i].add_player_button_background,
+					 	// 	'color': schemes[i].add_player_button_text
+					 	// });
+					 	// $('.add-scheme-button').css({
+					 	// 	'background': schemes[i].add_scheme_button_background,
+					 	// 	'color': schemes[i].add_scheme_button_text
+					 	// });
+					 	// $('.change-scheme-button').css({
+					 	// 	'background': schemes[i].change_scheme_button_background,
+					 	// 	'color': schemes[i].change_scheme_button_text
+					 	// });
 			 		}
 			 	}
 			 })
