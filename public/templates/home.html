@@ -230,14 +230,14 @@
 				<div class="row" >
 					<table class="" style="margin-left: 20px;">
 						<tr ng-repeat="scheme in playersController.allSchemes">
-							<td align="left" style="padding-right: 20px;">
+							<td align="left" class="change-scheme-button-cell">
 								<label class="" >
 									<input class="change-schemes-button" type="radio" ng-model="model" ng-value="scheme" ng-init="scheme.id==playersController.radioId?(model=scheme):''" ng-change="playersController.changeSchemes( scheme )">
 									<span class="radioSpan"></span>
 									{{scheme.name}}
 								</label>
 							</td>
-							<td style="padding-right: 20px">
+							<td class="glyphicon-pencil-cell">
 								<i class="glyphicon glyphicon-pencil" data-dismiss="modal" data-toggle="modal" data-target="#updateSchemesModal" ng-click="playersController.getSchemeForUpdating( scheme )"></i>
 							</td>
 							<td>

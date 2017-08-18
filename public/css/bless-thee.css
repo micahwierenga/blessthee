@@ -93,10 +93,12 @@ table {
 	text-align: center;
 }
 
-/*Modal*/
+/*General Modal*/
 .modal {
 	color: #000;
 }
+
+/*Change Scheme Modal*/
 .radioList {
 	list-style: none;
 }
@@ -123,6 +125,12 @@ label input[type="radio"]:checked + span {
   -o-transition:background-color 0.4s linear;
   -moz-transition:background-color 0.4s linear;
   transition:background-color 0.4s linear;
+}
+.change-scheme-button-cell {
+	padding-right: 20px;
+}
+.glyphicon-pencil-cell {
+	padding-right: 15px;	
 }
 #change-scheme-close {
 	text-align: center;
