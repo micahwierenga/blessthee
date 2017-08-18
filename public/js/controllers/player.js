@@ -11,6 +11,8 @@ function PlayerIndexController( $http ) {
 	vm.deletePlayer = deletePlayer;
 	vm.saveScheme = saveScheme;
 	vm.changeSchemes = changeSchemes;
+	vm.getSchemeForUpdating = getSchemeForUpdating;
+	vm.updateScheme = updateScheme;
 	vm.deleteScheme = deleteScheme;
 
 	function getAllPlayers() {
@@ -91,11 +93,11 @@ function PlayerIndexController( $http ) {
 			 			vm.defaultScheme = schemes[i];
 			 			vm.radioId = schemes[i].id;
 			 			$('body').css({
-					 		'background-color': schemes[i].body_background,
+					 		'background': schemes[i].body_background,
 					 		'color': schemes[i].body_text
 					 	});
 					 	$('#scoreTable').css({
-					 		'background-color': schemes[i].table_background,
+					 		'background': schemes[i].table_background,
 					 		'color': schemes[i].table_text
 					 	});
 					 	$('table.table-bordered').css({
@@ -170,6 +172,22 @@ function PlayerIndexController( $http ) {
 		var id = scheme.id;
 		$http.put( '/api/schemes/' + id, changedScheme )
 			 .then( function( response ) {
+			 	getAllSchemes();
+			 })
+	}
+
+	function getSchemeForUpdating( scheme ) {
+		vm.schemeForUpdatingId = scheme.id;
+		$http.get( '/api/schemes/' + vm.schemeForUpdatingId )
+			 .then( function( response ) {
+			 	vm.schemeForUpdating = response.data;
+			 })
+	}
+
+	function updateScheme() {
+		$http.put( '/api/schemes/' + vm.schemeForUpdatingId, vm.schemeForUpdating )
+			 .then( function( response ) {
+			 	vm.updatedColorScheme = response.data;
 			 	getAllSchemes();
 			 })
 	}
