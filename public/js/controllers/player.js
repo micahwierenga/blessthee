@@ -45,6 +45,12 @@ function PlayerIndexController( $http ) {
 
 	function blessPlayer( player ) {
 		var halloweenTheme = new Audio( '../../media/halloween_theme.mp3' );
+		var longestLaugh = new Audio( '../../media/longest_laugh.mp3' );
+		for( var i = 0; i < vm.allPlayers.length; i++ ) {
+			if( player.id != vm.allPlayers[i].id && player.score == vm.allPlayers[i].score ) {
+				longestLaugh.play();
+			}
+		}
 		var blessedPlayer = {
 			score: player.score + 1
 		}
